@@ -1,20 +1,54 @@
 import { createTheme } from '@mui/material';
 
-export const theme = createTheme({
+import PlusJakartaSans from 'common/assets/fonts/PlusJakartaSans-Regular.ttf';
+
+export const MuiCustomTheme = createTheme({
+  type: 'light',
+  fonts: {
+    primary:
+      '"PlusJakartaSans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,Cantarell, "Helvetica Neue", sans-serif',
+    baseSize: '14px',
+  },
+  palette: {
+    mode: 'light',
+    text: {
+      primary: '#1B1B1B',
+    },
+  },
+  typography: {
+    subtitle1: {
+      fontStyle: 'normal',
+      fontWeight: 400,
+      fontSize: '14px',
+      lineHeight: '143%',
+      letterSpacing: '0.17px',
+    },
+  },
   components: {
-    MuiTypography: {
-      defaultProps: {
-        variantMapping: {
-          h1: 'h2',
-          h2: 'h2',
-          h3: 'h2',
-          h4: 'h2',
-          h5: 'h2',
-          h6: 'h2',
-          subtitle1: 'h2',
-          subtitle2: 'h2',
-          body1: 'span',
-          body2: 'span',
+    MuiCssBaseline: {
+      styleOverrides: {
+        '@font-face': {
+          fontFamily: 'PlusJakartaSans',
+          src: `local("PlusJakartaSans"), url(${PlusJakartaSans}) format("truetype")`,
+        },
+        body: {
+          fontFamily:
+            '"PlusJakartaSans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,Cantarell, "Helvetica Neue", sans-serif',
+          background: '#F7F9FB',
+        },
+        '& .MuiTypography-root': {
+          fontFamily:
+            '"PlusJakartaSans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,Cantarell, "Helvetica Neue", sans-serif',
+        },
+        '& .Mui-checked': {
+          color: '#21B6A8 !important',
+        },
+      },
+    },
+    MuiButton: {
+      styleOverrides: {
+        outlined: {
+          color: 'primary',
         },
       },
     },

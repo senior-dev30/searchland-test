@@ -2,13 +2,17 @@ import React from 'react';
 
 import ReactDOM from 'react-dom';
 
+import { LightThemeProvider } from 'common/style/ThemeProvider';
+
 import App from './App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <LightThemeProvider>
+      <App />
+    </LightThemeProvider>
   </React.StrictMode>,
   document.getElementById('root'),
 );

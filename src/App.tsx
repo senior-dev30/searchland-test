@@ -1,30 +1,29 @@
-import { Typography } from '@mui/material';
+import React from 'react';
 
-import './App.css';
-import SvgZone from './components/images/SvgZone';
-import logo from './logo.svg';
+import { Box, Typography } from '@mui/material';
 
-function App() {
+import Card from 'components/common/Card';
+
+import CardMediaImg from 'common/assets/images/CardMedia.png';
+
+const App = () => {
+  const [checked, setChecked] = React.useState(false);
+  const onChange = () => {
+    setChecked(!checked);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <SvgZone />
-        <Typography variant="h2">asd</Typography>
-      </header>
-    </div>
+    <Box display="flex" flexDirection="column" alignItems="center">
+      <Box mb={3}>
+        <Typography variant="h2" color="primary">
+          Testing
+        </Typography>
+      </Box>
+      <Box>
+        <Card label="Flood zone 3" image={CardMediaImg} checked={checked} onChange={onChange} />
+      </Box>
+    </Box>
   );
-}
+};
 
 export default App;
