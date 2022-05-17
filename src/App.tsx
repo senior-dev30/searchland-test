@@ -1,3 +1,5 @@
+import { Typography } from '@mui/material';
+
 import './App.css';
 import SvgZone from './components/images/SvgZone';
 import logo from './logo.svg';
@@ -19,6 +21,7 @@ function App() {
           Learn React
         </a>
         <SvgZone />
+        <Typography variant="h2">asd</Typography>
       </header>
     </div>
   );
