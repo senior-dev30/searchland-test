@@ -19,9 +19,10 @@ const Card = ({ image, label, checked = false, onChange }: Props) => {
       flexDirection="column"
       sx={{
         '&:hover': {
-          border: 'solid 2px #65E9D9',
+          boxShadow: '0px 0px 0px 2px #65E9D9',
         },
-        border: checked ? 'solid 2px #65E9D9' : '1px solid #EFEFEF',
+        border: !checked ? '1px solid #EFEFEF' : 'none',
+        boxShadow: checked ? '0px 0px 0px 2px #65E9D9' : 'none',
         borderRadius: '10px',
       }}
     >
