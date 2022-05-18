@@ -12,8 +12,19 @@ type Props = {
 const Checkbox = ({ label, checked, onChange, disabled, sx }: Props) => {
   return (
     <FormControlLabel
-      control={<MuiCheckbox checked={checked} onChange={onChange} disabled={disabled} />}
-      label={<Typography variant="subtitle1">{label}</Typography>}
+      control={
+        <MuiCheckbox
+          checked={checked}
+          onChange={onChange}
+          disabled={disabled}
+          sx={{ padding: 0 }}
+        />
+      }
+      label={
+        <Typography variant="subtitle1" pl="10px">
+          {label}
+        </Typography>
+      }
       sx={sx}
     />
   );

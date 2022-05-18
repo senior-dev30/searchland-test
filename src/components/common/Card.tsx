@@ -20,6 +20,7 @@ const Card = ({ image, label, checked = false, onChange }: Props) => {
       sx={{
         '&:hover': {
           boxShadow: '0px 0px 0px 2px #65E9D9',
+          border: 'none',
         },
         border: !checked ? '1px solid #EFEFEF' : 'none',
         boxShadow: checked ? '0px 0px 0px 2px #65E9D9' : 'none',
@@ -32,9 +33,15 @@ const Card = ({ image, label, checked = false, onChange }: Props) => {
         style={{ borderTopLeftRadius: '10px', borderTopRightRadius: '10px' }}
       />
       <Box
-        p={2}
+        px="18px"
+        py="15px"
         width="100%"
-        sx={{ background: '#fff', borderBottomLeftRadius: '10px', borderBottomRightRadius: '10px' }}
+        sx={{
+          background: '#fff',
+          borderBottomLeftRadius: '10px',
+          borderBottomRightRadius: '10px',
+          '& label': { margin: 0 },
+        }}
       >
         {label && <Checkbox label={label} checked={checked} onChange={onChange} />}
       </Box>
